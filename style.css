@@ -1,176 +1,212 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Bradley Hand, cursive;
-    scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Bradley Hand, cursive;
+  scroll-behavior: smooth;
 }
 
-body{
-    min-height: 100vh;
-    overflow-x: hidden;
-    background: linear-gradient(#2b1055, #7597de);
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(#2b1055, #7597de);
 }
 
-header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10000;
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
 }
 
-header .logo{
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 35px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-header ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-header ul li{
-    list-style: none;
-    margin-left: 20px;
+header ul li {
+  position: relative;
+  list-style: none;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-header ul li a{
-    text-decoration: none;
-    padding: 6px 15px;
-    color: #fff;
-    border-radius: 20px;
+header ul li p {
+  position: absolute;
+  display: none;
+  width: 250px;
+  height: 300px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid white;
+  color: #fff;
+  top: 110%;
+  content: var(--content);
+  overflow-y: scroll;
+  word-wrap: break-word;
 }
 
-header ul li a:hover ,
-header ul li a.active{
-    background: #fff;
-    color: #2b1055;
+header ul li:hover p {
+  display: block;
 }
 
-section{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+p::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-section::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to top, #1c0522, transparent);
-    z-index: 1000;
+p::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background-color: #2b1055;
 }
 
-section img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
+p::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: #ffffff55;
+  border-radius: 100px;
 }
 
-section img#moon{
-    mix-blend-mode: screen;
+header ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px;
 }
 
-section img#mountains_front
-{
-    z-index: 10;
+header ul li a.active {
+  background: #fff;
+  color: #2b1055;
 }
 
-#text{
-    position: absolute;
-    right: -350px;
-    color: #fff;
-    white-space: nowrap;
-    font-size: 120px;
-    z-index: 9;
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-#btn{
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 30px;
-    border-radius: 40px;
-    background-color: #fff;
-    color: #2b1055;
-    font-size: 25px;
-    z-index: 9;
-    transform: translateY(100px);
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #1c0522, transparent);
+  z-index: 1000;
 }
 
-.sec{
-    position: relative;
-    background: #1c0522;
-    height: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
-.BOX{
-    position: relative;
-    height: 300px;
-    width: 300px;
-    color: #2b1055;
-    box-shadow: 0px 0px 90px -10px black;
-    transition: margin-top .5s ease, background-color .5s ease;
+section img#moon {
+  mix-blend-mode: screen;
 }
 
-.box{
-    position: absolute;
-    background-color: black;
-    margin-top: 45px;
-    color: #00000000;
-    overflow: hidden;
-    scrollbar-width: none;
-    box-shadow: 0px 0px 90px -10px black;
-    height: 0px;
-    transition: height .5s ease;
+section img#mountains_front {
+  z-index: 10;
 }
 
-.BOX:hover{
-    margin-top: 50px;
-    background-color: rgba(96, 43, 145, 0.322);
+#text {
+  position: absolute;
+  right: -350px;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 120px;
+  z-index: 9;
 }
 
-.BOX:hover .box{
-    width: 300px;
-    color: white;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 40px;
+  background-color: #fff;
+  color: #2b1055;
+  font-size: 25px;
+  z-index: 9;
+  transform: translateY(100px);
 }
 
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.sec {
+  position: relative;
+  background: #1c0522;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.img{
-    width: 200px;
-    height: 200px;
-    margin-top: 50px;
+.BOX {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  color: #2b1055;
+  box-shadow: 0px 0px 90px -10px black;
+  transition: margin-top 0.5s ease, background-color 0.5s ease;
+}
+
+.box {
+  position: absolute;
+  background-color: black;
+  margin-top: 45px;
+  color: #00000000;
+  overflow: hidden;
+  scrollbar-width: none;
+  box-shadow: 0px 0px 90px -10px black;
+  height: 0px;
+  transition: height 0.5s ease;
+}
+
+.BOX:hover {
+  margin-top: 50px;
+  background-color: rgba(96, 43, 145, 0.322);
+}
+
+.BOX:hover .box {
+  width: 300px;
+  color: white;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
 }
